@@ -1,0 +1,550 @@
+苹果: apple  
+橙子: orange  
+香蕉: banana  
+葡萄: grape  
+西瓜: watermelon  
+草莓: strawberry  
+樱桃: cherry  
+菠萝: pineapple  
+柠檬: lemon  
+桃子: peach  
+梨: pear  
+芒果: mango  
+猕猴桃: kiwi  
+蓝莓: blueberry  
+椰子: coconut  
+红色: red  
+蓝色: blue  
+黄色: yellow  
+绿色: green  
+紫色: purple  
+黑色: black  
+白色: white  
+橙色: orange  
+粉色: pink  
+棕色: brown  
+灰色: gray  
+金色: gold  
+银色: silver  
+长: long  
+短: short  
+高: tall  
+矮: short  
+大: big  
+小: small  
+快: fast  
+慢: slow  
+多: many  
+少: few  
+热: hot  
+冷: cold  
+新: new  
+旧: old  
+硬: hard  
+软: soft  
+强: strong  
+弱: weak  
+早: early  
+晚: late  
+远: far  
+近: near  
+轻: light  
+重: heavy  
+好: good  
+坏: bad  
+高兴: happy  
+悲伤: sad  
+愤怒: angry  
+害怕: afraid  
+兴奋: excited  
+累: tired  
+无聊: bored  
+饿: hungry  
+渴: thirsty  
+学校: school  
+老师: teacher  
+学生: student  
+教室: classroom  
+黑板: blackboard  
+书: book  
+笔: pen  
+铅笔: pencil  
+橡皮: eraser  
+尺子: ruler  
+桌子: table  
+椅子: chair  
+电脑: computer  
+手机: mobile phone  
+电视: television  
+冰箱: refrigerator  
+洗衣机: washing machine  
+微波炉: microwave  
+空调: air conditioner  
+汽车: car  
+自行车: bicycle  
+火车: train  
+飞机: airplane  
+轮船: ship  
+公交车: bus  
+出租车: taxi  
+红绿灯: traffic light  
+医院: hospital  
+医生: doctor  
+护士: nurse  
+病人: patient  
+药: medicine  
+商店: shop  
+超市: supermarket  
+市场: market  
+饭店: restaurant  
+银行: bank  
+邮局: post office  
+警察: police  
+消防员: firefighter  
+司机: driver  
+工人: worker  
+农民: farmer  
+厨师: chef  
+工程师: engineer  
+科学家: scientist  
+作家: writer  
+画家: painter  
+音乐家: musician  
+演员: actor  
+歌手: singer  
+运动员: athlete  
+商人: businessman  
+老板: boss  
+秘书: secretary  
+朋友: friend  
+同事: colleague  
+家人: family  
+父母: parents  
+爸爸: father  
+妈妈: mother  
+哥哥: elder brother  
+弟弟: younger brother  
+姐姐: elder sister  
+妹妹: younger sister  
+儿子: son  
+女儿: daughter  
+爷爷: grandfather  
+奶奶: grandmother  
+外公: grandfather  
+外婆: grandmother  
+叔叔: uncle  
+阿姨: aunt  
+男孩: boy  
+女孩: girl  
+男人: man  
+女人: woman  
+老人: old man  
+年轻人: young people  
+婴儿: baby  
+动物: animal  
+狗: dog  
+猫: cat  
+兔子: rabbit  
+老虎: tiger  
+狮子: lion  
+熊: bear  
+大象: elephant  
+长颈鹿: giraffe  
+猴子: monkey  
+狼: wolf  
+蛇: snake  
+乌龟: turtle  
+鱼: fish  
+鸟: bird  
+鸭子: duck  
+鸡: chicken  
+马: horse  
+牛: cow  
+猪: pig  
+羊: sheep  
+天气: weather  
+太阳: sun  
+月亮: moon  
+星星: star  
+云: cloud  
+雨: rain  
+雪: snow  
+风: wind  
+雷: thunder  
+闪电: lightning  
+春天: spring  
+夏天: summer  
+秋天: autumn  
+冬天: winter  
+时间: time  
+小时: hour  
+分钟: minute  
+秒: second  
+今天: today  
+昨天: yesterday  
+明天: tomorrow  
+星期: week  
+月份: month  
+一年: year  
+早上: morning  
+中午: noon  
+下午: afternoon  
+晚上: evening  
+夜晚: night  
+家: home  
+房子: house  
+公寓: apartment  
+卧室: bedroom  
+客厅: living room  
+厨房: kitchen  
+卫生间: bathroom  
+门: door  
+窗户: window  
+床: bed  
+沙发: sofa  
+桌子: table  
+椅子: chair  
+衣柜: wardrobe  
+书架: bookshelf  
+地板: floor  
+天花板: ceiling  
+墙: wall  
+食物: food  
+米饭: rice  
+面条: noodles  
+面包: bread  
+牛奶: milk  
+鸡蛋: egg  
+肉: meat  
+鱼: fish  
+水果: fruit  
+蔬菜: vegetables  
+糖: sugar  
+盐: salt  
+胡椒: pepper  
+油: oil  
+水: water  
+茶: tea  
+咖啡: coffee  
+果汁: juice  
+运动: sport  
+跑步: running  
+游泳: swimming  
+篮球: basketball  
+足球: football  
+排球: volleyball  
+乒乓球: table tennis  
+网球: tennis  
+羽毛球: badminton  
+高尔夫: golf  
+滑雪: skiing  
+骑自行车: cycling  
+音乐: music  
+唱歌: singing  
+跳舞: dancing  
+钢琴: piano  
+吉他: guitar  
+小提琴: violin  
+鼓: drum  
+电影: movie  
+书籍: book  
+艺术: art  
+画画: painting  
+摄影: photography  
+旅行: travel  
+地图: map  
+指南针: compass  
+行李: luggage  
+护照: passport  
+机票: ticket  
+地铁: subway  
+登机: boarding  
+景点: attraction  
+火山: volcano  
+森林: forest  
+河流: river  
+湖泊: lake  
+沙漠: desert  
+山: mountain  
+海洋: ocean  
+冰川: glacier  
+峡谷: canyon  
+温泉: hot spring  
+瀑布: waterfall  
+草原: prairie  
+动物园: zoo  
+博物馆: museum  
+图书馆: library  
+公司: company  
+工厂: factory  
+会议: meeting  
+合同: contract  
+投资: investment  
+工资: salary  
+银行账户: bank account  
+信用卡: credit card  
+市场: market  
+广告: advertisement  
+销售: sales  
+客户: customer  
+医疗: medical  
+手术: surgery  
+急救: first aid  
+疫苗: vaccine  
+药房: pharmacy  
+疾病: disease  
+医生: doctor  
+护士: nurse  
+治疗: treatment
+数据: data  
+信息: information  
+知识: knowledge  
+智慧: wisdom  
+计算机: computer  
+程序: program  
+软件: software  
+硬件: hardware  
+算法: algorithm  
+数据库: database  
+网络: network  
+服务器: server  
+存储: storage  
+加密: encryption  
+解密: decryption  
+密码: password  
+人工智能: artificial intelligence  
+机器学习: machine learning  
+深度学习: deep learning  
+神经网络: neural network  
+自动化: automation  
+机器人: robot  
+传感器: sensor  
+芯片: chip  
+半导体: semiconductor  
+电子: electronics  
+信号: signal  
+电路: circuit  
+电池: battery  
+能量: energy  
+光: light  
+声波: sound wave  
+电磁: electromagnetic  
+无线: wireless  
+卫星: satellite  
+天文: astronomy  
+宇宙: universe  
+银河: galaxy  
+恒星: star  
+行星: planet  
+月球: moon  
+太阳系: solar system  
+黑洞: black hole  
+引力: gravity  
+相对论: relativity  
+量子: quantum  
+物理: physics  
+化学: chemistry  
+元素: element  
+分子: molecule  
+原子: atom  
+反应: reaction  
+催化: catalysis  
+氧化: oxidation  
+还原: reduction  
+酸: acid  
+碱: base  
+中和: neutralization  
+生物: biology  
+细胞: cell  
+基因: gene  
+DNA: DNA  
+RNA: RNA  
+蛋白质: protein  
+酶: enzyme  
+病毒: virus  
+细菌: bacteria  
+真菌: fungus  
+寄生虫: parasite  
+生态: ecology  
+进化: evolution  
+遗传: heredity  
+克隆: cloning  
+免疫: immunity  
+抗体: antibody  
+疫苗: vaccine  
+疾病: disease  
+流感: flu  
+肺炎: pneumonia  
+癌症: cancer  
+糖尿病: diabetes  
+高血压: hypertension  
+心脏病: heart disease  
+中风: stroke  
+抑郁症: depression  
+焦虑: anxiety  
+心理学: psychology  
+认知: cognition  
+记忆: memory  
+感知: perception  
+情绪: emotion  
+行为: behavior  
+潜意识: subconscious  
+梦: dream  
+哲学: philosophy  
+道德: morality  
+伦理: ethics  
+逻辑: logic  
+意识: consciousness  
+自由: freedom  
+命运: fate  
+现实: reality  
+本质: essence  
+存在: existence  
+宇宙观: cosmology  
+宗教: religion  
+信仰: belief  
+神话: mythology  
+灵魂: soul  
+天堂: heaven  
+地狱: hell  
+轮回: reincarnation  
+因果: karma  
+修行: meditation  
+文化: culture  
+传统: tradition  
+习俗: custom  
+节日: festival  
+艺术: art  
+绘画: painting  
+雕塑: sculpture  
+建筑: architecture  
+文学: literature  
+诗歌: poetry  
+小说: novel  
+戏剧: drama  
+音乐: music  
+旋律: melody  
+节奏: rhythm  
+和弦: chord  
+交响乐: symphony  
+民谣: folk music  
+流行: pop  
+摇滚: rock  
+爵士: jazz  
+蓝调: blues  
+电子音乐: electronic music  
+电影: film  
+导演: director  
+演员: actor  
+编剧: screenwriter  
+摄影: photography  
+镜头: lens  
+光影: lighting  
+剪辑: editing  
+字幕: subtitle  
+动画: animation  
+漫画: comic  
+游戏: game  
+角色: character  
+关卡: level  
+任务: mission  
+虚拟现实: virtual reality  
+增强现实: augmented reality  
+编程: coding  
+代码: code  
+接口: interface  
+函数: function  
+变量: variable  
+逻辑运算: logical operation  
+数学: mathematics  
+几何: geometry  
+代数: algebra  
+微积分: calculus  
+统计: statistics  
+概率: probability  
+矩阵: matrix  
+方程: equation  
+理论: theory  
+假设: hypothesis  
+实验: experiment  
+测量: measurement  
+分析: analysis  
+建模: modeling  
+优化: optimization  
+经济: economy  
+市场: market  
+供需: supply and demand  
+货币: currency  
+通货膨胀: inflation  
+金融: finance  
+投资: investment  
+股票: stock  
+债券: bond  
+基金: fund  
+保险: insurance  
+银行: bank  
+借贷: loan  
+信用: credit  
+贸易: trade  
+国际贸易: international trade  
+进出口: import and export  
+税收: taxation  
+财政: fiscal policy  
+预算: budget  
+支出: expenditure  
+收入: income  
+工资: salary  
+资本: capital  
+创业: entrepreneurship  
+商业模式: business model  
+管理: management  
+组织: organization  
+领导力: leadership  
+市场营销: marketing  
+品牌: brand  
+广告: advertisement  
+公关: public relations  
+客户: customer  
+销售: sales  
+谈判: negotiation  
+合同: contract  
+法律: law  
+宪法: constitution  
+法规: regulation  
+权利: rights  
+义务: obligation  
+合同法: contract law  
+知识产权: intellectual property  
+专利: patent  
+版权: copyright  
+商标: trademark  
+刑法: criminal law  
+民法: civil law  
+行政法: administrative law  
+国际法: international law  
+人工智能伦理: AI ethics  
+隐私: privacy  
+数据保护: data protection  
+安全: security  
+网络安全: cybersecurity  
+黑客: hacker  
+防火墙: firewall  
+加密技术: cryptography  
+生物识别: biometrics  
+物联网: internet of things  
+区块链: blockchain  
+数字货币: digital currency  
+元宇宙: metaverse  
+无人机: drone  
+自动驾驶: autonomous driving  
+基因编辑: gene editing  
+脑机接口: brain-computer interface  
+纳米技术: nanotechnology  
+可再生能源: renewable energy  
+太阳能: solar energy  
+风能: wind energy  
+核能: nuclear energy  
+碳中和: carbon neutrality  
+碳捕获: carbon capture  
+生态平衡: ecological balance  
+可持续发展: sustainable development

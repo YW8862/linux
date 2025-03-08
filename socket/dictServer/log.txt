@@ -1,0 +1,172 @@
+ [ 2025-3-5 21:56:20 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 38 ]  [ socket create sucess ] 
+ [ 2025-3-5 21:56:20 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 57 ]  [ socket init sucess ] 
+ [ 2025-3-5 21:56:20 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 21:56:26 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 21:56:26 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 86 ]  [ Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674  ] 
+ [ 2025-3-5 21:56:26 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 21:56:26 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 21:56:26 ] [ INFO ] [ udpClient.cpp ] [ pid:12918 ] [ 66 ]  [ receive response ] 
+ [ 2025-3-5 21:56:33 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 21:56:33 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 86 ]  [ Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674  ] 
+ [ 2025-3-5 21:56:33 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 21:56:33 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 21:56:33 ] [ INFO ] [ udpClient.cpp ] [ pid:12918 ] [ 66 ]  [ receive response ] 
+ [ 2025-3-5 21:56:42 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 21:56:42 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 86 ]  [ Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674  ] 
+ [ 2025-3-5 21:56:42 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 21:56:42 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 21:56:50 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 21:56:50 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 86 ]  [ Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674  ] 
+ [ 2025-3-5 21:56:50 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 21:56:50 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 21:56:54 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 21:56:54 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 86 ]  [ Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674  ] 
+ [ 2025-3-5 21:56:54 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 21:56:54 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 21:57:0 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 21:57:0 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 86 ]  [ Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674  ] 
+ [ 2025-3-5 21:57:0 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 21:57:0 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 21:57:0 ] [ INFO ] [ udpClient.cpp ] [ pid:12918 ] [ 66 ]  [ receive response ] 
+ [ 2025-3-5 21:57:10 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 21:57:10 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 86 ]  [ Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674  ] 
+ [ 2025-3-5 21:57:10 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 21:57:10 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 21:57:19 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 21:57:19 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 86 ]  [ Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674  ] 
+ [ 2025-3-5 21:57:19 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 21:57:19 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 21:57:25 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 21:57:25 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 86 ]  [ Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674 Server receive a word from à§
+ªý:49674  ] 
+ [ 2025-3-5 21:57:25 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 21:57:25 ] [ INFO ] [ udpServer.hpp ] [ pid:12913 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 21:57:25 ] [ INFO ] [ udpClient.cpp ] [ pid:12918 ] [ 66 ]  [ receive response ] 
+ [ 2025-3-5 22:10:22 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 38 ]  [ socket create sucess ] 
+ [ 2025-3-5 22:10:22 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 57 ]  [ socket init sucess ] 
+ [ 2025-3-5 22:10:22 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:30 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:30 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:43565 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:30 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:30 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:30 ] [ INFO ] [ udpClient.cpp ] [ pid:17315 ] [ 66 ]  [ receive response ] 
+ [ 2025-3-5 22:10:34 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:34 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:34 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:34 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:35 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:36 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 84 ]  [ socket receive a word ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 86 ]  [ Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:35251 Server receive a word from €” áþ:43565  ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 91 ]  [ send translation sucess ] 
+ [ 2025-3-5 22:10:37 ] [ INFO ] [ udpServer.hpp ] [ pid:17302 ] [ 67 ]  [ socket is runing ] 
+ [ 2025-3-6 22:14:44 ] [ INFO ] [ udpServer.hpp ] [ pid:2749 ] [ 38 ]  [ socket create sucess ] 
+ [ 2025-3-6 22:14:44 ] [ INFO ] [ udpServer.hpp ] [ pid:2749 ] [ 57 ]  [ socket init sucess ] 
+ [ 2025-3-6 22:14:44 ] [ INFO ] [ udpServer.hpp ] [ pid:2749 ] [ 67 ]  [ socket is runing ] 
