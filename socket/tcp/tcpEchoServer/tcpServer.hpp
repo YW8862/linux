@@ -6,6 +6,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include "log.hpp"
+#include "inetAddr.hpp"
 
 #define DEFAULTSOCKFD -1
 #define BACKLOG 16
@@ -13,7 +14,7 @@
 class TcpServer
 {
 public:
-    TcpServer(uint16_t port):_port(port),_sockfd(DEFAULTSOCKFD)
+    TcpServer(uint16_t port):_port(port),_listensock(DEFAULTSOCKFD)
     {
 
     }
@@ -26,10 +27,10 @@ public:
     void init()
     {
         //1.创建流式套接字
-        _sockfd = socket(AF_INET,SOCK_STREAM,0);
-        if(_sockfd < 0)
+        _listensock = socket(AF_INET,SOCK_STREAM,0);
+        if(_listensock < 0)
         {
-            LOG(FATAL,"sockfd create fail,sockfd:%d",_sockfd);
+            LOG(FATAL,"sockfd create fail,sockfd:%d",_listensock);
             exit(SOCKET_ERROR);
         }
 
@@ -41,7 +42,7 @@ public:
         local.sin_port = htons(_port);
         local.sin_addr.s_addr = INADDR_ANY;
 
-        int n = ::bind(_sockfd,(const struct sockaddr *)&local,sizeof(local));
+        int n = ::bind(_listensock,(const struct sockaddr *)&local,sizeof(local));
         if(n < 0)
         {
             LOG(FATAL,"bind fail");
@@ -50,7 +51,7 @@ public:
 
         //3.tcp是面向连接的，在通信之前，必须先建立连接
         // 等待客户端向服务端连接申请
-        n = ::listen(_sockfd,BACKLOG);
+        n = ::listen(_listensock,BACKLOG);
         if(n < 0)
         {
             LOG(FATAL,"listen error");
@@ -61,18 +62,33 @@ public:
     void loop()
     {
         _isRuning = true;
-        while(true)
+        while(_isRuning)
         {
             //4.建立连接
             struct sockaddr_in peer;
             socklen_t len = sizeof(peer);
-            int sockfd = ::accept(_sockfd)
+            int sockfd = ::accept(_listensock,(struct sockaddr *)&peer,&len);
+            if(sockfd < 0)
+            {
+                LOG(ERROR,"accept error");
+                continue;
+            }
+            service(sockfd,InetAddr(peer));
+        }
+    }
+
+    void service(int sockfd,InetAddr client)
+    {
+        LOG(INFO,"get a link");
+        while(true)
+        {
+            
         }
     }
 
 private:
     uint16_t _port;
-    int _sockfd;
+    int _listensock;
     bool _isRuning;
 
 };
