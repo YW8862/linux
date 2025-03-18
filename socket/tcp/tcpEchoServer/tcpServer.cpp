@@ -20,10 +20,10 @@ int main(int argc,char *argv[])
         Usage(argv[0]);
         exit(-1);
     }
-
+    LOGTOSCREEN();
     uint16_t port = std::stoi(argv[1]);
     
-    std::unique_ptr<TcpServer> tsvr = std::make_unique<TcpServer>();
+    std::unique_ptr<TcpServer> tsvr = std::make_unique<TcpServer>(htons(port));
     tsvr->init();
     tsvr->loop();
     return 0;

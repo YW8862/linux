@@ -6,7 +6,8 @@ enum
     SOCKET_ERROR = 1,
     BIND_ERROR,
     LISTEN_ERROR,
-    USAGE_ERROR
+    USAGE_ERROR,
+    CONNECT_ERROR
 };
 
 enum Level

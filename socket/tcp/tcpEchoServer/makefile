@@ -4,9 +4,9 @@ all:tcpServer tcpClient
 tcpServer:tcpServer.cpp
 	g++ -o $@ $^ -g -std=c++14 -lpthread
 
-tcpServer:tcpClient.cpp
+tcpClient:tcpClient.cpp
 	g++ -o $@ $^ -g -std=c++14 -lpthread
 
 .PHONY:clean
 clean:
-	rm -f tcpServer udpCltcpClientient
+	rm -f tcpServer tcpClient
