@@ -3,6 +3,7 @@
 
 #include <unistd.h>
 #include <functional>
+#include <string>
 #include <sys/types.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
@@ -17,28 +18,13 @@
 #define BACKLOG 16
 
 using task_t = std::function<void()>;
-
-class TcpServer;
-
-// class ThreadData
-// {
-// public:
-//     ThreadData(int fd, InetAddr client, TcpServer *s) : sockfd(fd), clientAddr(client), server(s)
-//     {
-//     }
-
-// public:
-//     int sockfd;
-//     InetAddr clientAddr;
-//     TcpServer *server;
-// };
+using func_t = std::function<std::string(std::string)>;
 
 class TcpServer
 {
 public:
-    TcpServer(uint16_t port) : _port(port), _listensock(DEFAULTSOCKFD)
+    TcpServer(uint16_t port, func_t func) : _port(port), _func(func), _listensock(DEFAULTSOCKFD), _isRuning(false)
     {
-        
     }
 
     ~TcpServer()
@@ -92,20 +78,11 @@ public:
         }
     }
 
-    // static void *handlerSock(void *args)
-    // {
-    //     //分离线程，避免主线程阻塞式等待
-    //     pthread_detach(pthread_self());
-    //     ThreadData* threadData = static_cast<ThreadData*>(args);
-    //     threadData->server->service(threadData->sockfd,threadData->clientAddr);
-    //     return nullptr;
-    // }
-
     void loop()
     {
         _isRuning = true;
-        //ThreadPool<ThreadData>* threadpool = ThreadPool<ThreadData>::getInstance();
-        ThreadPool<task_t>* threadpool = ThreadPool<task_t>::getInstance();
+        // ThreadPool<ThreadData>* threadpool = ThreadPool<ThreadData>::getInstance();
+        ThreadPool<task_t> *threadpool = ThreadPool<task_t>::getInstance();
         while (_isRuning)
         {
             // 4.建立连接
@@ -121,32 +98,8 @@ public:
             {
                 LOG(INFO, "accept sucess");
             }
-            // service(sockfd, InetAddr(peer));
-
-            // V1多进程版本
-            // // 创建子进程用于完成通信任务
-            // pid_t id = fork();
-            // if (id == 0)
-            // {
-            //     // 子进程不关心监听套接字，直接关闭即可
-            //     ::close(_listensock);
-            //     if (fork() > 0)
-            //         exit(0);
-            //     service(sockfd, InetAddr(peer)); // 孙子进程变为孤儿进程，被init进程领养
-            //     exit(0);
-            // }
-            // // 父进程
-            // ::close(sockfd);
-            // waitpid(id, nullptr, 0);
-
-            // V2多线程版本
-            // pthread_t tid;
-            // ThreadData* data = new ThreadData(sockfd,InetAddr(peer),this);
-            // pthread_create(&tid,nullptr,handlerSock,(void*)data);
-
             // V3线程池版本
-            task_t task = std::bind(&TcpServer::service,this,sockfd,InetAddr(peer));
-            // threadpool->enQueue(ThreadData(sockfd,InetAddr(peer),this));
+            task_t task = std::bind(&TcpServer::service, this, sockfd, InetAddr(peer));
             threadpool->enQueue(task);
         }
         close(_listensock);
@@ -161,16 +114,16 @@ public:
         {
             char inbuffer[1024];
             // 在网络当中，如果n == 0，表示客户端退出并且关闭链接了
+            // 当字节流较长的时候，可能导致不能一次性读完
             ssize_t r = read(sockfd, inbuffer, sizeof(inbuffer) - 1);
 
             if (r > 0)
             {
                 inbuffer[r] = '\0';
                 std::cout << clientaddr << inbuffer << std::endl;
+                std::string resultString = _func(inbuffer);
 
-                std::string echoString = "[server echo message]";
-                echoString += inbuffer;
-                ssize_t s = write(sockfd, echoString.c_str(), echoString.size());
+                ssize_t s = send(sockfd, resultString.c_str(), resultString.size(), 0);
                 if (s > 0)
                 {
                     LOG(INFO, "send a message to %s", clientaddr.c_str());
@@ -196,6 +149,7 @@ private:
     uint16_t _port;
     int _listensock;
     bool _isRuning;
+    func_t _func;
 };
 
 #endif

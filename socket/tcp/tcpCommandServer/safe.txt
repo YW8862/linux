@@ -1,0 +1,8 @@
+ls
+pwd
+tree
+who
+whoami
+uname
+cat
+touch
