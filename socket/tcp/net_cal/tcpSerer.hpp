@@ -8,23 +8,38 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <memory>
 #include <wait.h>
+
 #include <signal.h>
 #include "log.hpp"
 #include "inetAddr.hpp"
-#include "threadPool.hpp"
+#include "Socket.hpp"
 
-#define DEFAULTSOCKFD -1
-#define BACKLOG 16
 
-using task_t = std::function<void()>;
-using func_t = std::function<std::string(std::string)>;
+using namespace ns_socket;
+
+class TcpServer;
+class ThreadData
+{
+public:
+    ThreadData(int fd, InetAddr client, TcpServer *s) : sockfd(fd), clientAddr(client), server(s)
+    {
+
+    }
+
+public:
+    socketPtr sockfd;
+    InetAddr clientAddr;
+    TcpServer *server;
+};
 
 class TcpServer
 {
 public:
-    TcpServer(uint16_t port, func_t func) : _port(port), _func(func), _listensock(DEFAULTSOCKFD), _isRuning(false)
+    TcpServer(uint16_t port) : _local("0",port), _isRuning(false),_listensock(std::make_unique<TcpSocket>())
     {
+        _listensock->buildListenSocket(_local);
     }
 
     ~TcpServer()
@@ -35,71 +50,24 @@ public:
         }
     }
 
-    void init()
-    {
-        // 1.创建流式套接字
-        _listensock = socket(AF_INET, SOCK_STREAM, 0);
-        if (_listensock < 0)
-        {
-            LOG(FATAL, "sockfd create fail,sockfd:%d", _listensock);
-            exit(SOCKET_ERROR);
-        }
-
-        // 2.绑定
-        struct sockaddr_in local;
-
-        bzero(&local, sizeof(local));
-        local.sin_family = AF_INET;
-        local.sin_port = _port;
-        local.sin_addr.s_addr = INADDR_ANY;
-
-        int n = ::bind(_listensock, (const struct sockaddr *)&local, sizeof(local));
-        if (n < 0)
-        {
-            LOG(FATAL, "bind fail");
-            exit(BIND_ERROR);
-        }
-        else
-        {
-            LOG(INFO, "bind Sucess");
-        }
-
-        // 3.tcp是面向连接的，在通信之前，必须先建立连接
-        //  等待客户端向服务端连接申请
-        n = ::listen(_listensock, BACKLOG);
-        if (n < 0)
-        {
-            LOG(FATAL, "listen error");
-            exit(LISTEN_ERROR);
-        }
-        else
-        {
-            LOG(INFO, "listen sucess");
-        }
-    }
-
     void loop()
     {
         _isRuning = true;
-        ThreadPool<task_t> *threadpool = ThreadPool<task_t>::getInstance();
+        
         while (_isRuning)
         {
             // 4.建立连接
-            struct sockaddr_in peer;
-            socklen_t len = sizeof(peer);
-            int sockfd = accept(_listensock, (struct sockaddr *)&peer, &len);
-            if (sockfd < 0)
+            InetAddr peerAddr;
+            socketPtr normalSock = _listensock->listenSocket(peerAddr);
+            if(normalSock == nullptr)
             {
-                LOG(ERROR, "accept error");
+                LOG(ERROR"创建sockfd失败")
                 continue;
             }
-            else
-            {
-                LOG(INFO, "accept sucess");
-            }
-            // V3线程池版本
-            task_t task = std::bind(&TcpServer::service, this, sockfd, InetAddr(peer));
-            threadpool->enQueue(task);
+            pthread_t t;
+            ThreadData *td = new ThreadData(normalSock,peerAddr,this);
+            pthread_create(&t,nullptr,HandlerSock,td);//将线程分离
+
         }
         close(_listensock);
     }
@@ -145,10 +113,9 @@ public:
     }
 
 private:
-    uint16_t _port;
-    int _listensock;
+    InetAddr _local;
+    std::unique_ptr<Socket> _listensock;
     bool _isRuning;
-    func_t _func;
 };
 
 #endif
