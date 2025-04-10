@@ -50,6 +50,13 @@ public:
         }
     }
 
+    void* HandlerSock(void *args)
+    {
+        pthread_detach(pthread_self());
+        ThreadData* td = static_cast<ThreadData*>(args);
+        td->server->service(td->sockfd,)
+    }
+
     void loop()
     {
         _isRuning = true;
@@ -72,7 +79,7 @@ public:
         close(_listensock);
     }
 
-    void service(int sockfd, InetAddr client)
+    void service(std::unique_ptr<Socket> sockfd, InetAddr client)
     {
         std::string clientaddr = "[" + client.getIp() + ":" + std::to_string(client.getPort()) + "]#";
         LOG(INFO, "get a link %s:%d,fd:%d", client.getIp(), client.getPort(), sockfd);
