@@ -1,3 +1,12 @@
+/*
+ * @Author: YW8862 2165628227@qq.com
+ * @Date: 2025-04-09 13:59:43
+ * @LastEditors: YW8862 2165628227@qq.com
+ * @LastEditTime: 2025-04-11 21:36:19
+ * @FilePath: /yw/linux/socket/tcp/net_cal/tcpSerer.hpp
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+
 #ifndef __TCPSERVER_HPP__
 #define __TCPSERVER_HPP__
 
@@ -16,113 +25,69 @@
 #include "inetAddr.hpp"
 #include "Socket.hpp"
 
-
 using namespace ns_socket;
 
 class TcpServer;
+using io_service_t = std::function<void (socket_sptr sockfd, InetAddr client)>;
+
 class ThreadData
 {
 public:
-    ThreadData(int fd, InetAddr client, TcpServer *s) : sockfd(fd), clientAddr(client), server(s)
-    {
-
-    }
-
+    ThreadData(socket_sptr fd, InetAddr addr, TcpServer *s):sockfd(fd), clientaddr(addr), self(s)
+    {}
 public:
-    socketPtr sockfd;
-    InetAddr clientAddr;
-    TcpServer *server;
+    socket_sptr sockfd;
+    InetAddr clientaddr;
+    TcpServer *self;
 };
-
 class TcpServer
 {
 public:
-    TcpServer(uint16_t port) : _local("0",port), _isRuning(false),_listensock(std::make_unique<TcpSocket>())
+    TcpServer(int port, io_service_t service) 
+        : _localaddr("0", port),
+          _listensock(std::make_unique<TcpSocket>()),
+          _service(service),
+          _isrunning(false)
     {
-        _listensock->buildListenSocket(_local);
+        _listensock->BuildListenSocket(_localaddr);
     }
 
-    ~TcpServer()
-    {
-        if (_listensock > DEFAULTSOCKFD)
-        {
-            close(_listensock);
-        }
-    }
-
-    void* HandlerSock(void *args)
+    static void *HandlerSock(void *args)
     {
         pthread_detach(pthread_self());
-        ThreadData* td = static_cast<ThreadData*>(args);
-        td->server->service(td->sockfd,)
+        ThreadData *td = static_cast<ThreadData *>(args);
+        td->self->_service(td->sockfd, td->clientaddr);
+        ::close(td->sockfd->SockFd()); // 文件描述符泄漏
+        delete td;
+        return nullptr;
     }
-
-    void loop()
+    
+    void Loop()
     {
-        _isRuning = true;
-        
-        while (_isRuning)
+        _isrunning = true;
+        // 4. 不能直接接受数据，先获取连接
+        while (_isrunning)
         {
-            // 4.建立连接
-            InetAddr peerAddr;
-            socketPtr normalSock = _listensock->listenSocket(peerAddr);
-            if(normalSock == nullptr)
-            {
-                LOG(ERROR"创建sockfd失败")
-                continue;
-            }
+            InetAddr peeraddr;
+            socket_sptr normalsock = _listensock->Accepter(&peeraddr);
+            if(normalsock == nullptr) continue;
+
             pthread_t t;
-            ThreadData *td = new ThreadData(normalSock,peerAddr,this);
-            pthread_create(&t,nullptr,HandlerSock,td);//将线程分离
-
+            ThreadData *td = new ThreadData(normalsock, peeraddr, this);
+            pthread_create(&t, nullptr, HandlerSock, td); //将线程分离
         }
-        close(_listensock);
+        _isrunning = false;
     }
-
-    void service(std::unique_ptr<Socket> sockfd, InetAddr client)
+    ~TcpServer()
     {
-        std::string clientaddr = "[" + client.getIp() + ":" + std::to_string(client.getPort()) + "]#";
-        LOG(INFO, "get a link %s:%d,fd:%d", client.getIp(), client.getPort(), sockfd);
-
-        while (true)
-        {
-            char inbuffer[1024];
-            // 在网络当中，如果n == 0，表示客户端退出并且关闭链接了
-            // 当字节流较长的时候，可能导致不能一次性读完
-            ssize_t r = read(sockfd, inbuffer, sizeof(inbuffer) - 1);
-
-            if (r > 0)
-            {
-                inbuffer[r] = '\0';
-                std::cout << clientaddr << inbuffer << std::endl;
-                std::string resultString = _func(inbuffer);
-
-                ssize_t s = send(sockfd, resultString.c_str(), resultString.size(), 0);
-                if (s > 0)
-                {
-                    LOG(INFO, "send a message to %s", clientaddr.c_str());
-                }
-            }
-            else if (r == 0)
-            {
-                LOG(INFO, "%s quit...", clientaddr.c_str());
-                break;
-            }
-            else
-            {
-                LOG(ERROR, "%s recv error...", clientaddr.c_str());
-                break;
-            }
-        }
-
-        // 使用完毕必须及时关闭
-        close(sockfd);
     }
 
 private:
-    InetAddr _local;
+    InetAddr _localaddr;
     std::unique_ptr<Socket> _listensock;
-    bool _isRuning;
+    bool _isrunning;
+
+    io_service_t _service;
 };
 
 #endif
