@@ -57,7 +57,7 @@ public:
         _stop = true;
         _cond.notify_all();   // 唤醒所有等待线程
         if(_worker.joinable()) _worker.join();  // 等待后台线程结束
-        if(file_stream_.is_open()) file_stream_.close();
+        if(_file_stream.is_open()) _file_stream.close();
     }
 
 private:
@@ -105,14 +105,14 @@ private:
     // 写入日志文件
     void write_to_file(const LogEntry& entry) {
         std::string filename = get_filename(entry.timestamp);
-        if(current_file_ != filename) {  // 日期变化时切换文件
-            if(file_stream_.is_open()) file_stream_.close();
-            current_file_ = filename;
-            file_stream_.open(current_file_, std::ios::app);
+        if(_current_file != filename) {  // 日期变化时切换文件
+            if(_file_stream.is_open()) _file_stream.close();
+            _current_file = filename;
+            _file_stream.open(_current_file, std::ios::app);
         }
 
-        if(file_stream_.is_open()) {
-            file_stream_ << format_entry(entry) << std::endl;
+        if(_file_stream.is_open()) {
+            _file_stream << format_entry(entry) << std::endl;
         }
     }
 
@@ -155,42 +155,42 @@ private:
     std::string _log_dir;                  // 日志目录
     std::queue<LogEntry> _queue;           // 日志队列
     std::mutex _queue_mutex;               // 队列互斥锁
-    std::condition_variable cond;         // 条件变量
+    std::condition_variable _cond;         // 条件变量
     std::thread _worker;                   // 后台工作线程
     bool _stop = false;                    // 停止标志
-    std::ofstream file_stream_;            // 文件输出流
-    std::string current_file_;             // 当前日志文件路径
+    std::ofstream _file_stream;            // 文件输出流
+    std::string _current_file;             // 当前日志文件路径
 };
 
 // 日志消息包装类（RAII管理）
 class LogMessage {
 public:
     LogMessage(LogLevel level, const char* file, int line) 
-        : level_(level), file_(file), line_(line) {}
+        : _level(level), _file(file), _line(line) {}
 
     ~LogMessage() {
-        if(level_ >= min_level_) {  // 级别过滤
-            AsyncLogger::instance().log(level_, file_, line_, stream_.str());
+        if(_level >= _min_level) {  // 级别过滤
+            AsyncLogger::instance().log(_level, _file, _line, _stream.str());
         }
     }
 
     // 流式输出接口
-    std::ostringstream& stream() { return stream_; }
+    std::ostringstream& stream() { return _stream; }
 
     // 设置全局最小日志级别
-    static void set_min_level(LogLevel level) { min_level_ = level; }
+    static void set_min_level(LogLevel level) { _min_level = level; }
 
 private:
-    LogLevel level_;
-    std::string file_;
-    int line_;
-    std::ostringstream stream_;
-    static LogLevel min_level_;  // 静态成员记录最低日志级别
+    LogLevel _level;
+    std::string _file;
+    int _line;
+    std::ostringstream _stream;
+    static LogLevel _min_level;  // 静态成员记录最低日志级别
 };
 
-LogLevel LogMessage::min_level_ = LogLevel::INFO;
+LogLevel LogMessage::_min_level = LogLevel::INFO;
 
 // 日志宏定义（自动捕获文件行号）
 #define LOG(LEVEL) \
-    if(LEVEL < LogMessage::min_level_) ; \
+    if(LEVEL < LogMessage::_min_level) ; \
     else LogMessage(LEVEL, __FILE__, __LINE__).stream()
