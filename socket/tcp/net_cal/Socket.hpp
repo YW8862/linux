@@ -1,153 +1,170 @@
-/*
- * @Author: YW8862 2165628227@qq.com
- * @Date: 2025-04-09 13:59:29
- * @LastEditors: YW8862 2165628227@qq.com
- * @LastEditTime: 2025-04-09 20:52:41
- * @FilePath: /yw/linux/socket/tcp/net_cal/Socket.hpp
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 #pragma once
+
 #include <iostream>
-#include <sys/types.h>
-#include <arpa/inet.h>
+#include <string>
+#include <functional>
+#include <sys/types.h> /* See NOTES */
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <cstring>
+#include <pthread.h>
+#include <sys/types.h>
 #include <memory>
 #include "inetAddr.hpp"
 #include "log.hpp"
-#include "status.h"
 
-// 模板方法模式
-namespace ns_socket
+// 模版方法模式
+namespace socket_ns
 {
-    const int BACKLOG = 8;
-    using socketPtr = std::shared_ptr<Socket>;
+    class Socket;
+    const static int gbacklog = 8;
+    using socket_sptr = std::shared_ptr<Socket>;
+
+    enum
+    {
+        SOCKET_ERROR = 1,
+        BIND_ERROR,
+        LISTEN_ERROR,
+        USAGE_ERROR
+    };
+
+
     class Socket
     {
     public:
-        virtual void createSocket() = 0;
-        virtual void bindSocket(InetAddr &addr) = 0;
-        virtual void listenSocket() = 0;
-        virtual socketPtr accepter(InetAddr &addr) = 0;
-        virtual bool connector(InetAddr &addr) = 0;
+        virtual void CreateSocketOrDie() = 0;
+        virtual void BindSocketOrDie(InetAddr &addr) = 0;
+        virtual void ListenSocketOrDie() = 0;
+        virtual socket_sptr Accepter(InetAddr *addr) = 0;
+        virtual bool Connetcor(InetAddr &addr) = 0;
+        virtual int SockFd() = 0;
+        virtual int Recv(std::string *out) = 0;
+        virtual int Send(const std::string &in) = 0;
+
+        // virtual void Recv() = 0;
+        // virtual void Send() = 0;
+        // virtual void other() = 0;
 
     public:
-        void buildListenSocket(InetAddr &addr)
+        void BuildListenSocket(InetAddr &addr)
         {
-            createSocket();
-            bindSocket(addr);
-            listenSocket();
+            CreateSocketOrDie();
+            BindSocketOrDie(addr);
+            ListenSocketOrDie();
         }
-
-        void buildClientSocket(InetAddr &addr)
+        bool BuildClientSocket(InetAddr &addr)
         {
-            createSocket();
-            connector(addr);
+            CreateSocketOrDie();
+            return Connetcor(addr);
         }
+        // void BuildUdpSocket()
+        // {
+        //     CreateSocketOrDie();
+        //     BindSocketOrDie();
+        // }
     };
 
     class TcpSocket : public Socket
     {
     public:
-        TcpSocket(int fd) : _sockfd(fd)
+        TcpSocket(int fd = -1) : _sockfd(fd)
         {
         }
-
-        /**
-         * @brief :创建流式套接字
-         */
-        void createSocket() override
+        void CreateSocketOrDie() override
         {
+            // 1. 创建流式套接字
             _sockfd = ::socket(AF_INET, SOCK_STREAM, 0);
             if (_sockfd < 0)
             {
-                LOG(FATAL, "sockfd create fail,sockfd:%d", _sockfd);
+                LOG(FATAL, "socket error");
                 exit(SOCKET_ERROR);
             }
-            LOG(INFO, "套接字创建成功,sockfd:%d", _sockfd)
+            LOG(DEBUG, "socket create success, sockfd is : %d\n", _sockfd);
         }
-
-        /**
-         * @brief 绑定socket
-         * @param addr:需要绑定的地址
-         */
-        void bindSocket(InetAddr &addr) override
+        void BindSocketOrDie(InetAddr &addr) override
         {
-            // 2.绑定
+            // 2. bind
             struct sockaddr_in local;
-
-            bzero(&local, sizeof(local));
+            memset(&local, 0, sizeof(local));
             local.sin_family = AF_INET;
-            local.sin_port = htons(addr.grtPort());
+            local.sin_port = htons(addr.getPort());
             local.sin_addr.s_addr = inet_addr(addr.getIp().c_str());
 
-            int n = ::bind(_sockfd, (const struct sockaddr *)&local, sizeof(local));
+            int n = ::bind(_sockfd, (struct sockaddr *)&local, sizeof(local));
             if (n < 0)
             {
-                LOG(FATAL, "bind fail");
+                LOG(FATAL, "bind error");
                 exit(BIND_ERROR);
             }
-            else
-            {
-                LOG(INFO, "bind Sucess");
-            }
+            LOG(DEBUG, "bind success, sockfd is : %d\n", _sockfd);
         }
-
-        void listenSocket() override
+        void ListenSocketOrDie() override
         {
-            // 3.tcp是面向连接的，在通信之前，必须先建立连接
-            //  等待客户端向服务端连接申请
-            int n = ::listen(_sockfd, BACKLOG);
+            int n = ::listen(_sockfd, gbacklog);
             if (n < 0)
             {
                 LOG(FATAL, "listen error");
                 exit(LISTEN_ERROR);
             }
-            else
-            {
-                LOG(INFO, "listen sucess");
-            }
+            LOG(DEBUG, "listen success, sockfd is : %d\n", _sockfd);
         }
-
-        socketPtr accepter(InetAddr &addr) override
+        socket_sptr Accepter(InetAddr *addr) override
         {
-            // 4.建立连接
             struct sockaddr_in peer;
             socklen_t len = sizeof(peer);
-            int sockfd = accept(_sockfd, (struct sockaddr *)&peer, &len);
+            int sockfd = ::accept(_sockfd, (struct sockaddr *)&peer, &len);
             if (sockfd < 0)
             {
-                LOG(ERROR, "accept error");
+                LOG(WARNING, "accept error\n");
                 return nullptr;
             }
-            addr = peer;
-            socketPtr sock = std::make_shared<TcpSocket>(sockfd);
+            *addr = peer;
+            socket_sptr sock = std::make_shared<TcpSocket>(sockfd);
             return sock;
         }
-
-        bool connector(InetAddr &addr) override
+        virtual bool Connetcor(InetAddr &addr)
         {
-            // 配置连接服务端信息
+            // tcp client 要bind，不要显示的bind.
             struct sockaddr_in server;
-            server.sin_addr.s_addr = inet_addr(ip.c_str());
+            // 构建目标主机的socket信息
+            memset(&server, 0, sizeof(server));
             server.sin_family = AF_INET;
             server.sin_port = htons(addr.getPort());
-            socklen_t len = sizeof(server);
+            server.sin_addr.s_addr = inet_addr(addr.getIp().c_str());
 
-            int n = connect(sockfd, (const struct sockaddr *)&server, len);
+            int n = connect(_sockfd, (struct sockaddr *)&server, sizeof(server));
             if (n < 0)
             {
-                std::cerr << "connect error, " << strerror(errno) << std::endl;
-
-                exit(CONNECT_ERROR);
+                std::cerr << "connect error" << std::endl;
                 return false;
             }
-            *addr = server;
             return true;
+        }
+        int Recv(std::string *out) override
+        {
+            char inbuffer[1024];
+            ssize_t n = ::recv(_sockfd, inbuffer, sizeof(inbuffer) - 1, 0);
+            if (n > 0)
+            {
+                inbuffer[n] = 0;
+                *out += inbuffer; // ??? +=
+            }
+            return n;
+        }
+        int Send(const std::string &in) override
+        {
+            int n = ::send(_sockfd, in.c_str(), in.size(), 0);
+            return n;
+        }
+        int SockFd() override
+        {
+            return _sockfd;
         }
 
     private:
         int _sockfd;
     };
 
-};
+} 

@@ -1,33 +1,25 @@
-/*
- * @Author: YW8862 2165628227@qq.com
- * @Date: 2025-04-09 13:59:43
- * @LastEditors: YW8862 2165628227@qq.com
- * @LastEditTime: 2025-04-11 21:36:19
- * @FilePath: /yw/linux/socket/tcp/net_cal/tcpSerer.hpp
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
-
-#ifndef __TCPSERVER_HPP__
-#define __TCPSERVER_HPP__
-
-#include <unistd.h>
-#include <functional>
+#include <iostream>
 #include <string>
-#include <sys/types.h>
-#include <arpa/inet.h>
+#include <functional>
+#include <sys/types.h> /* See NOTES */
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <cstring>
+#include <pthread.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 #include <memory>
-#include <wait.h>
 
-#include <signal.h>
-#include "log.hpp"
 #include "inetAddr.hpp"
+#include "log.hpp"
 #include "Socket.hpp"
 
-using namespace ns_socket;
+using namespace socket_ns;
 
 class TcpServer;
+
 using io_service_t = std::function<void (socket_sptr sockfd, InetAddr client)>;
 
 class ThreadData
@@ -61,7 +53,6 @@ public:
         delete td;
         return nullptr;
     }
-    
     void Loop()
     {
         _isrunning = true;
@@ -89,5 +80,3 @@ private:
 
     io_service_t _service;
 };
-
-#endif
