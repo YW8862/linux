@@ -22,8 +22,7 @@ public:
         getAddress(&_ip,&_port);
     }
     ~InetAddr()
-    {
-    }
+    {}
 
     std::string getIp()
     {

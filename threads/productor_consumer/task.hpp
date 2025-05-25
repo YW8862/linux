@@ -7,34 +7,4 @@ using namespace std;
 
 using task = function<void()>;
 
-// class task
-// {
-// public:
-//     task()
-//     {}
-
-//     task(int a,int b):_a(a),_b(b),_result(0)
-//     {}
-
-//     void excute()
-//     {
-//         _result = _a + _b;
-//     }
-
-//     string resultToString()
-//     {
-//         return to_string(_a) + " + " + to_string(_b) + " = " + to_string(_result);
-//     }
-
-//     string questionToString()
-//     {
-//         return to_string(_a) + " + " + to_string(_b) + " = ?";
-//     }
-
-// private:
-//     int _a;
-//     int _b;
-//     int _result;
-// };
-
 #endif

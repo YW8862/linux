@@ -20,12 +20,10 @@ class UdpServer
 {
 public:
     UdpServer(uint16_t port,func_t func) : _port(port), _func(func), _sockfd(defaultfd), _isRunning(false)
-    {
-    }
+    {}
 
     ~UdpServer()
-    {
-    }
+    {}
 
     void initServer()
     {

@@ -101,7 +101,7 @@ namespace ThreadModule
 
         int buyTickets()
         {
-            cout<<_name<<" buy a tickets,left tickets: "<< --_tickets <<endl;
+            //cout<<_name<<" buy a tickets,left tickets: "<< --_tickets <<endl;
             _total ++;
             return _tickets;
         }

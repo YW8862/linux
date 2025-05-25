@@ -52,6 +52,7 @@ public:
         }
         // 队列未满，生产产品
         _blockQueue.push(move(in));
+        cout<<"生产产品成功"<<endl;
         //生产完商品，通知消费者
         if(_consumerWaitNum>0)
         {
@@ -73,6 +74,7 @@ public:
         //进行消费
         out = _blockQueue.front();
         _blockQueue.pop();
+        cout<<"消费产品成功"<<endl;
         //消费完商品，通知生产者
         if(_productorWaitNum>0)
         {
