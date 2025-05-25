@@ -61,10 +61,11 @@ public:
         {
             //读取请求
             response = td->self->_http_service(request);
+            td->sockfd->Send(response);
             //发送应答
             // if(td->sockfd->Send(response))
             // {
-                td->sockfd->Close();        
+            td->sockfd->Close();        
             //}
         }
 
